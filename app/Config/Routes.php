@@ -8,5 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'HomeController::index');
 $routes->group('admin',static function ($routes) {
     $routes->get('categories', 'Admin\CategoriesController::index');
-    $routes->get('categories/add', 'Admin\CategoriesController::add', ['as' => 'category_add']);
+    $routes->match(['get','post'], 'categories/add', 'Admin\CategoriesController::add', ['as' => 'category_add']);
+    $routes->match(['get','put'], 'categories/edit/(:num)', 'Admin\CategoriesController::edit/$1', ['as' => 'category_edit']);
+    $routes->get('categories/delete/(:num)', 'Admin\CategoriesController::delete/$1');
 });
