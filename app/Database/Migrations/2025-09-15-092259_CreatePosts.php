@@ -9,7 +9,7 @@ class CreatePosts extends Migration
 {
     public function up()
     {
-         $this->forge->addField('id');
+        $this->forge->addField('id');
         $this->forge->addField([
             'name' => [
                 'type'       => 'VARCHAR',
@@ -58,7 +58,6 @@ class CreatePosts extends Migration
                 'constraint' => '11',
                 'null' => false,
             ]
-            
         ]);
         $this->forge->addForeignKey('category_id', 'categories', 'id');
         $this->forge->addForeignKey('user_id', 'users', 'id');

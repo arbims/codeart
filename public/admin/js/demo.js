@@ -157,7 +157,7 @@ if (tomSelectOp) {
     labelField: 'name',
     searchField: 'name',
     load: function(query, callback) {
-        var url = 'http://localhost:8080/admin/search/get-technologies.json?q=' + encodeURIComponent(query);
+        var url = 'http://localhost:8080/admin/search/get-technologies?q=' + encodeURIComponent(query);
         fetch(url)
             .then(response => response.json())
             .then(json => {

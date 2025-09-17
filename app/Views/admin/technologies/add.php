@@ -5,10 +5,10 @@
     <div class="col-lg-12">
         <div class="card position-relative">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary"> Categories </h6>
+                <h6 class="m-0 font-weight-bold text-primary"> Technologies </h6>
             </div>
             <div class="card-body">
-                <?= form_open_multipart('admin/categories/add') ?>
+                 <?= form_open_multipart('admin/technologies/add') ?>
                 <div class="mb-3 row">
                     <?= form_label('name', 'name', ['class' => 'col-sm-2 col-form-label']) ?>
                     <div class="col-sm-6">
@@ -21,6 +21,13 @@
                     <div class="col-sm-6">
                         <?= form_input('slug', old('slug', ''), ['class' => "form-control " . errors_message_class(session('errors'), 'slug') . "", 'label' => false]) ?>
                         <?= errors_message(session('errors'), 'slug') ?>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <?= form_label('content', 'content', ['class' => 'col-sm-2 col-form-label']) ?>
+                    <div class="col-sm-6">
+                        <?= form_textarea('content', old('content', ''), ['class' => "form-control " . errors_message_class(session('errors'), 'content') . "", 'label' => false]) ?>
+                        <?= errors_message(session('errors'), 'content') ?>
                     </div>
                 </div>
                 <hr>
